@@ -63,6 +63,7 @@ resource "aws_instance" "terraform-instance" {
    security_groups = [aws_security_group.secutiy_group.name]
    instance_type = var.ec2_instance_type
    ami = var.ec2_image_id
+   user_data = file("install_nginx.sh")
 
    root_block_device {
      volume_size = var.ec2_storage_size
