@@ -61,11 +61,11 @@ egress {
 resource "aws_instance" "terraform-instance" {
    key_name = aws_key_pair.terraform_key.key_name
    security_groups = [aws_security_group.secutiy_group.name]
-   instance_type = "t2.micro"
-   ami = "ami-0e35ddab05955cf57"
+   instance_type = var.ec2_instance_type
+   ami = var.ec2_image_id
 
    root_block_device {
-     volume_size = 15
+     volume_size = var.ec2_storage_size
      volume_type = "gp3"
    }
 
