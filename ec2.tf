@@ -63,7 +63,7 @@ resource "aws_instance" "terraform-instance" {
     terraform_micro_1 = "t2.micro",
     terraform_micro_2 = "t2.micro"
    })
-   depends_on = [ aws_key_pair.terraform_key, awaws_security_group.secutiy_group ]
+   depends_on = [ aws_key_pair.terraform_key, aws_security_group.secutiy_group ]
    key_name = aws_key_pair.terraform_key.key_name
    security_groups = [aws_security_group.secutiy_group.name]
    instance_type = each.value
