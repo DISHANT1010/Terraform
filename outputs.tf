@@ -12,6 +12,6 @@ output "ec2_private_ip" {
 
 output "ec2_public_dns" {
   value = [
-    for dns in aws_aws_instance.terraform-instance : dns.public_dns
+    for dns in aws_instance.terraform-instance : dns.public_dns
   ]
 }
