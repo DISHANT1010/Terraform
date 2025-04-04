@@ -59,6 +59,7 @@ egress {
 # EC2 instance
 
 resource "aws_instance" "terraform-instance" {
+   count = 2
    key_name = aws_key_pair.terraform_key.key_name
    security_groups = [aws_security_group.secutiy_group.name]
    instance_type = var.ec2_instance_type
