@@ -6,7 +6,7 @@ output "ec2_public_ip" {
 
 output "ec2_private_ip" {
   value = [
-    for pip in aws_aws_instance.terraform-instance : pip.private_ip
+    for pip in aws_instance.terraform-instance : pip.private_ip
   ]
 }
 
