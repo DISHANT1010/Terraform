@@ -12,3 +12,8 @@ variable "ec2_image_id" {
   default = "ami-0e35ddab05955cf57"
   type = string
 }
+
+variable "env" {
+  default = "prd"
+  type = string
+}
