@@ -62,7 +62,7 @@ resource "aws_instance" "terraform-instance" {
    key_name = aws_key_pair.terraform_key.key_name
    security_groups = [aws_security_group.secutiy_group.name]
    instance_type = "t2.micro"
-   ami = "ami-084568db4383264d4"
+   ami = "ami-0e35ddab05955cf57"
 
    root_block_device {
      volume_size = 15
