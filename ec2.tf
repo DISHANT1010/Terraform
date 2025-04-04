@@ -59,10 +59,14 @@ egress {
 # EC2 instance
 
 resource "aws_instance" "terraform-instance" {
-   count = 2
+   for_each = tomap({
+    terraform_micro_1 = "t2.micro",
+    terraform_micro_2 = "t2.micro"
+   })
+   
    key_name = aws_key_pair.terraform_key.key_name
    security_groups = [aws_security_group.secutiy_group.name]
-   instance_type = var.ec2_instance_type
+   instance_type = each.value
    ami = var.ec2_image_id
    user_data = file("install_nginx.sh")
 
@@ -72,6 +76,6 @@ resource "aws_instance" "terraform-instance" {
    }
 
    tags = {
-    Name = "terraform-instance"
+    Name = each.key
    }
 }
