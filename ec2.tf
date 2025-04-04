@@ -70,6 +70,6 @@ resource "aws_instance" "terraform-instance" {
    }
 
    tags = {
-    name = "terraform-instance"
+    Name = "terraform-instance"
    }
 }
