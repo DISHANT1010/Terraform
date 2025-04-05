@@ -79,8 +79,3 @@ resource "aws_instance" "terraform-instance" {
     Name = each.key
    }
 }
-
-resource "aws_instance" "my_new_instacne" {
-  ami = "unknown"
-  instance_type = "unknown"
-}
